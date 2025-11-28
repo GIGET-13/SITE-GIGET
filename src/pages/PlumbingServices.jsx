@@ -1,0 +1,76 @@
+import PageBanner from "../components/sections/PageBanner";
+import ContentSection from "../components/layout/ContentSection";
+import TwoColumnGrid from "../components/layout/TwoColumnGrid";
+
+import FeatureCard from "../components/ui/FeatureCard";
+import { CheckBadgeIcon } from "../icons/CheckBadgeIcon";
+import { SparklesIcon } from "../icons/SparklesIcon";
+
+const PlumbingServices = () => (
+  <section className="bg-white min-h-screen">
+    <PageBanner
+      subtitle="Pôle Plomberie & Robinetterie"
+      title="Viae Domo"
+      description="Une solution mutualisée pour la maintenance préventive de la plomberie dans les logements sociaux."
+      bgColor="bg-[#004e64]"
+      bgImage="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=2070&auto=format&fit=crop"
+      bgOpacity="opacity-45"
+      textColors={{ subtitle: "text-cyan-200", description: "text-cyan-100" }}
+    />
+    <ContentSection>
+      <TwoColumnGrid className="mb-24">
+        <div>
+          <h2 className="text-4xl font-serif text-[#004e64] mb-6">
+            L'Approche Viae Domo
+          </h2>
+          <p className="text-slate-600 text-lg leading-relaxed mb-6">
+            Face à l'augmentation des coûts de l'eau et aux sinistres dégâts des
+            eaux, le GIGET a développé "Viae Domo". C'est un service dédié à
+            l'entretien préventif de la robinetterie et des équipements
+            sanitaires.
+          </p>
+          <p className="text-slate-600 text-lg leading-relaxed">
+            L'objectif est double : améliorer le confort des locataires en
+            réduisant les fuites, et maîtriser les charges récupérables pour les
+            bailleurs.
+          </p>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1749532125405-70950966b0e5?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Illustration Plomberie"
+          className="w-full h-auto object-cover rounded-lg"
+        />
+      </TwoColumnGrid>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <FeatureCard
+          icon={CheckBadgeIcon}
+          title="Maintenance Préventive"
+          description="Visites annuelles programmées pour vérifier l'ensemble des équipements. Nous anticipons les pannes pour garantir la tranquillité des résidents."
+          items={[
+            "Vérification des chasses d'eau",
+            "Remplacement des joints",
+            "Contrôle des siphons",
+          ]}
+        />
+        <FeatureCard
+          icon={SparklesIcon}
+          title="Interventions Curatives"
+          description="Une réactivité exemplaire pour les pannes et fuites signalées. Nos techniciens interviennent rapidement pour limiter les dégâts des eaux."
+          items={[
+            "Gestion des urgences",
+            "Réparations durables",
+            "Rapport d'intervention détaillé",
+          ]}
+          borderColor="border-[#004e64]"
+          iconBg="bg-cyan-50"
+          iconHoverBg="group-hover:bg-[#004e64]"
+          textColor="text-[#004e64]"
+          bulletColor="bg-[#004e64]"
+        />
+      </div>
+    </ContentSection>
+  </section>
+);
+
+export default PlumbingServices;
