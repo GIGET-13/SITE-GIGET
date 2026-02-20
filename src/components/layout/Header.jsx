@@ -48,11 +48,10 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${
-          scrolled || location.pathname !== "/" || mobileMenuOpen
-            ? "py-3 glass-panel bg-white/95 shadow-sm"
-            : "py-6 bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 w-full z-50 ${location.pathname === "/" ? "transition-all duration-700" : "transition-[padding,box-shadow] duration-300"} ${scrolled || location.pathname !== "/" || mobileMenuOpen
+          ? "py-3 glass-panel bg-white/95 shadow-sm"
+          : "py-6 bg-transparent"
+          }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 flex justify-between items-center">
           <Link
@@ -73,15 +72,13 @@ const Header = () => {
                 key={link.to}
                 to={link.to}
                 onClick={handleNavClick}
-                className={`text-xs font-medium uppercase tracking-widest hover:text-giget-red transition-all duration-300 relative group ${
-                  isActive(link.to) ? "text-giget-red" : "text-giget-blue"
-                }`}
+                className={`text-xs font-medium uppercase tracking-widest hover:text-giget-red transition-all duration-300 relative group ${isActive(link.to) ? "text-giget-red" : "text-giget-blue"
+                  }`}
               >
                 {link.label}
                 <span
-                  className={`absolute -bottom-2 left-0 h-[1px] bg-giget-red transition-all duration-300 ${
-                    isActive(link.to) ? "w-full" : "w-0 group-hover:w-full"
-                  }`}
+                  className={`absolute -bottom-2 left-0 h-[1px] bg-giget-red transition-all duration-300 ${isActive(link.to) ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
                 ></span>
               </Link>
             ))}
@@ -104,19 +101,16 @@ const Header = () => {
           >
             <div className="space-y-1.5">
               <span
-                className={`block w-8 h-0.5 bg-giget-blue transition-transform duration-300 ${
-                  mobileMenuOpen ? "rotate-45 translate-y-2" : ""
-                }`}
+                className={`block w-8 h-0.5 bg-giget-blue transition-transform duration-300 ${mobileMenuOpen ? "rotate-45 translate-y-2" : ""
+                  }`}
               ></span>
               <span
-                className={`block w-8 h-0.5 bg-giget-blue transition-opacity duration-300 ${
-                  mobileMenuOpen ? "opacity-0" : ""
-                }`}
+                className={`block w-8 h-0.5 bg-giget-blue transition-opacity duration-300 ${mobileMenuOpen ? "opacity-0" : ""
+                  }`}
               ></span>
               <span
-                className={`block w-8 h-0.5 bg-giget-blue transition-transform duration-300 ${
-                  mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
-                }`}
+                className={`block w-8 h-0.5 bg-giget-blue transition-transform duration-300 ${mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+                  }`}
               ></span>
             </div>
           </button>
@@ -124,9 +118,8 @@ const Header = () => {
       </header>
 
       <div
-        className={`fixed inset-0 bg-white z-40 transition-transform duration-500 ease-in-out lg:hidden flex flex-col justify-start pt-32 md:pt-40 items-center h-[100dvh] w-screen overflow-hidden overscroll-none ${
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed inset-0 bg-white z-40 transition-transform duration-500 ease-in-out lg:hidden flex flex-col justify-start pt-32 md:pt-40 items-center h-[100dvh] w-screen overflow-hidden overscroll-none ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <nav className="flex flex-col gap-8 text-center px-6 w-full max-w-md">
           {navLinks.map((link) => (
@@ -134,9 +127,8 @@ const Header = () => {
               key={link.to}
               to={link.to}
               onClick={handleNavClick}
-              className={`text-2xl font-serif font-bold ${
-                isActive(link.to) ? "text-giget-red" : "text-giget-blue"
-              }`}
+              className={`text-2xl font-serif font-bold ${isActive(link.to) ? "text-giget-red" : "text-giget-blue"
+                }`}
             >
               {link.label}
             </Link>

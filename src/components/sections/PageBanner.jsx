@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const PageBanner = ({
   subtitle,
   title,
@@ -14,26 +16,51 @@ const PageBanner = ({
   } = textColors;
 
   return (
-    <div className={`${bgColor} py-24 relative overflow-hidden`}>
+    <div className={`${bgColor} pt-[120px] pb-10 relative overflow-hidden`}>
       {bgImage && (
-        <div
-          className={`absolute inset-0 bg-[url('${bgImage}')] bg-cover bg-center ${bgOpacity}`}
-        ></div>
+        <motion.div
+          initial={{ scale: 1.05, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="absolute inset-0 z-0 pointer-events-none"
+        >
+          <div
+            className={`absolute inset-0 bg-cover bg-center ${bgOpacity}`}
+            style={{ backgroundImage: `url('${bgImage}')` }}
+          ></div>
+        </motion.div>
       )}
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex items-center gap-3 mb-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+          className="flex items-center gap-3 mb-4"
+        >
           <span
             className={`${subtitleColor} text-xs font-bold tracking-[0.3em] uppercase`}
           >
             {subtitle}
           </span>
-        </div>
-        <h1 className={`text-5xl md:text-7xl font-serif ${titleColor} mb-6`}>
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className={`text-5xl md:text-7xl font-serif ${titleColor} mb-6`}
+        >
           {title}
-        </h1>
-        <p className={`text-xl ${descColor} max-w-2xl font-light`}>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          className={`text-xl ${descColor} max-w-2xl font-light`}
+        >
           {description}
-        </p>
+        </motion.p>
       </div>
     </div>
   );

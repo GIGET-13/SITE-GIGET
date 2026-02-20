@@ -1,4 +1,167 @@
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { Users as UsersIcon } from "lucide-react";
+
+const PILLARS = [
+  {
+    title: "Association",
+    subtitle: "Loi 1901",
+    color: "#800020", // Bordeaux Rubis
+    summary: "Structure à but non lucratif créée pour mutualiser les coûts et l'expertise. Le GIGET n'a pas vocation à faire du profit mais à optimiser les charges locatives.",
+    details: "En tant qu'association Loi 1901, notre indépendance financière et morale est totale. Tous nos adhérents disposent du même niveau d'information et contribuent à part égale aux décisions stratégiques.",
+  },
+  {
+    title: "Gouvernance",
+    subtitle: "Bailleurs",
+    color: "#1e40af", // Bleu Roi
+    summary: "Dirigé par un Conseil d'Administration (CA) composé exclusivement de représentants des Bailleurs Sociaux. Ils valident le budget, les missions et la stratégie.",
+    details: "Chaque décision impactant la vie de l'association ou les fonds mutualisés passe par une validation stricte du CA. Cela garantit une transparence absolue et une adéquation parfaite avec les intérêts des locataires.",
+  },
+  {
+    title: "Transparence",
+    subtitle: "Financière",
+    color: "#b45309", // Bronze Doré
+    summary: "Fonctionnement par appel à provisions et Unités d'Œuvre. Restitution systématique des sommes non dépensées en fin d'exercice aux adhérents.",
+    details: "Notre modèle repose sur une refacturation au coût réel (Unités d'Œuvre). Des bilans quadrimestriels sont présentés pour piloter précisément le budget et ajuster, si besoin, les provisions appelées.",
+  }
+];
+
+const PillarCard = ({ title, subtitle, summary, details, color, index }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-20px" }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="relative bg-white px-8 py-10 overflow-hidden border border-slate-200 shadow-sm transition-shadow group flex flex-col"
+      style={{ borderTop: `4px solid ${color}` }}
+    >
+      <div
+        className="absolute right-4 -top-6 text-[8rem] font-serif opacity-[0.05] pointer-events-none transition-transform duration-500 group-hover:scale-110"
+        style={{ color: color }}
+      >
+        0{index}
+      </div>
+
+      <div className="relative z-10 pt-2 flex flex-col h-full">
+        <h3 className="text-2xl font-serif font-bold text-giget-blue mb-4 leading-tight">
+          {title} <br />
+          <span className="font-light">{subtitle}</span>
+        </h3>
+        <div className="w-12 h-[2px] mb-6 transition-all duration-300 group-hover:w-24" style={{ backgroundColor: color }}></div>
+
+        <p className="text-slate-600 leading-relaxed font-light mb-6 flex-grow">
+          {summary}
+        </p>
+
+        <div className="pt-4 border-t border-slate-100 mt-2">
+          <p className="text-sm font-medium text-slate-700 leading-relaxed">
+            {details}
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const VIE_ASSOCIATIVE = [
+  {
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop",
+    frequency: "Annuel",
+    title: "Assemblée Générale",
+    summary: "Le moment fort de l'année. Réunion de tous les adhérents pour valider les comptes, voter le budget prévisionnel et définir les orientations stratégiques du groupement.",
+    details: [
+      "Approbation des comptes de l'exercice clos",
+      "Vote du budget prévisionnel de l'année N+1",
+      "Élection des membres du Conseil d'Administration",
+      "Point d'étape sur les chantiers en cours"
+    ],
+    tag: "Décisions Stratégiques",
+    borderColor: "border-giget-red",
+    tagColor: "text-giget-red"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop",
+    frequency: "Mensuel",
+    title: "Réunions de Bureau",
+    summary: "Une gouvernance active avec des réunions mensuelles du Conseil d'Administration pour assurer le pilotage opérationnel et le suivi des missions en cours.",
+    details: [
+      "Suivi détaillé de l'exécution du budget",
+      "Point RH et recrutement",
+      "Analyse des performances par pôle (Ascenseurs/Plomberie)",
+      "Préparation des grandes échéances"
+    ],
+    tag: "Pilotage Opérationnel",
+    borderColor: "border-giget-blue",
+    tagColor: "text-giget-blue"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop",
+    frequency: "Ponctuel",
+    title: "Groupes de Travail",
+    summary: "Espaces de réflexion technique (Ascenseurs) et juridique pour anticiper les évolutions réglementaires et partager les bonnes pratiques entre bailleurs.",
+    details: [
+      "Ateliers techniques sur les nouvelles normes (Loi SAE, etc.)",
+      "Élaboration commune de cahiers des charges types",
+      "Retours d'expériences (REX) sur des sinistres ou innovations",
+      "Veille juridique et technologique partagée"
+    ],
+    tag: "Intelligence Collective",
+    borderColor: "border-slate-500",
+    tagColor: "text-slate-600"
+  }
+];
+
+const VieAssociativeCard = ({ image, frequency, title, summary, details, tag, borderColor, tagColor }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-20px" }}
+      transition={{ duration: 0.5 }}
+      className={`bg-white shadow-xl rounded-sm overflow-hidden flex flex-col h-full border-b-4 ${borderColor} group`}
+    >
+      <div className="h-48 relative overflow-hidden shrink-0">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className={`absolute top-4 right-4 bg-white/95 px-3 py-1 text-xs font-bold tracking-widest shadow-sm uppercase ${tagColor}`}>
+          {frequency}
+        </div>
+      </div>
+      <div className="p-8 flex-grow flex flex-col">
+        <h4 className="font-serif text-2xl text-giget-blue mb-4">
+          {title}
+        </h4>
+        <p className="text-slate-600 text-sm leading-relaxed mb-6">
+          {summary}
+        </p>
+
+        <div className="mb-6 flex-grow">
+          <ul className="space-y-3">
+            {details.map((item, idx) => (
+              <li
+                key={idx}
+                className="flex text-xs text-slate-700 items-start gap-2"
+              >
+                <span className={`w-1.5 h-1.5 rounded-full mt-1 shrink-0 bg-slate-300 group-hover:bg-current transition-colors ${tagColor}`}></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="pt-6 border-t border-slate-100 mt-auto flex items-center justify-between">
+          <span className="text-xs text-slate-400 uppercase tracking-wider font-semibold">
+            {tag}
+          </span>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 const Organization = () => {
   const scrollRef = useRef(null);
@@ -25,163 +188,28 @@ const Organization = () => {
           <div className="w-24 h-1 bg-giget-red mx-auto mt-8"></div>
         </div>
 
-        {/* 3 Pillars - STATIC DESIGN (No Hover Effects) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-          {/* Card 1: Bordeaux Rubis Accent */}
-          <div className="relative bg-white px-10 py-10 overflow-hidden border border-slate-200 border-t-4 border-t-[#800020] shadow-sm">
-            <div className="absolute right-4 -top-6 text-[8rem] font-serif text-[#800020] opacity-10 pointer-events-none">
-              01
-            </div>
-            <div className="relative z-10 pt-2">
-              <h3 className="text-2xl font-serif font-bold text-giget-blue mb-6">
-                Association <br />
-                Loi 1901
-              </h3>
-              <div className="w-12 h-[2px] bg-[#800020] mb-6"></div>
-              <p className="text-slate-600 leading-relaxed font-light">
-                Structure à but non lucratif créée pour mutualiser les coûts et
-                l'expertise. Le GIGET n'a pas vocation à faire du profit mais à
-                optimiser les charges locatives.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 2: Bleu Roi Profond Accent */}
-          <div className="relative bg-white px-10 py-10 overflow-hidden border border-slate-200 border-t-4 border-t-[#1e40af] shadow-sm">
-            <div className="absolute right-4 -top-6 text-[8rem] font-serif text-[#1e40af] opacity-10 pointer-events-none">
-              02
-            </div>
-            <div className="relative z-10 pt-2">
-              <h3 className="text-2xl font-serif font-bold text-giget-blue mb-6">
-                Gouvernance <br />
-                Bailleurs
-              </h3>
-              <div className="w-12 h-[2px] bg-[#1e40af] mb-6"></div>
-              <p className="text-slate-600 leading-relaxed font-light">
-                Dirigé par un Conseil d'Administration (CA) composé
-                exclusivement de représentants des Bailleurs Sociaux. Ils
-                valident le budget, les missions et la stratégie.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 3: Bronze Doré Accent */}
-          <div className="relative bg-white px-10 py-10 overflow-hidden border border-slate-200 border-t-4 border-t-[#b45309] shadow-sm">
-            <div className="absolute right-4 -top-6 text-[8rem] font-serif text-[#b45309] opacity-10 pointer-events-none">
-              03
-            </div>
-            <div className="relative z-10 pt-2">
-              <h3 className="text-2xl font-serif font-bold text-giget-blue mb-6">
-                Transparence <br />
-                Financière
-              </h3>
-              <div className="w-12 h-[2px] bg-[#b45309] mb-6"></div>
-              <p className="text-slate-600 leading-relaxed font-light">
-                Fonctionnement par appel à provisions et "Unités d'Œuvre".
-                Restitution systématique des sommes non dépensées en fin
-                d'exercice aux adhérents.
-              </p>
-            </div>
-          </div>
+        {/* 3 Pillars - INTERACTIVE DESIGN */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+          {PILLARS.map((pillar, index) => (
+            <PillarCard key={index} {...pillar} index={index + 1} />
+          ))}
         </div>
 
-        {/* Life of Association - NEW DESIGN (Informative Cards) */}
+        {/* Life of Association - INTERACTIVE DESIGN */}
         <div className="mb-24">
-          <div className="flex items-center gap-4 mb-12">
+          <div className="flex items-center gap-4 mb-16">
             <div className="h-[1px] flex-grow bg-slate-200"></div>
-            <h3 className="text-3xl font-serif text-giget-blue text-center">
+            <h3 className="text-3xl font-serif text-giget-blue text-center flex items-center gap-3">
+              <UsersIcon className="w-8 h-8 text-giget-red" />
               La Vie Associative
             </h3>
             <div className="h-[1px] flex-grow bg-slate-200"></div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            {/* Card Life 1 */}
-            <div className="bg-white shadow-xl rounded-sm overflow-hidden flex flex-col h-full border-b-4 border-giget-red">
-              <div className="h-48 relative overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop"
-                  alt="AG"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-                <div className="absolute top-4 right-4 bg-white/95 px-3 py-1 text-xs font-bold tracking-widest text-giget-red shadow-sm uppercase">
-                  Annuel
-                </div>
-              </div>
-              <div className="p-8 flex-grow flex flex-col">
-                <h4 className="font-serif text-2xl text-giget-blue mb-4">
-                  Assemblée Générale
-                </h4>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
-                  Le moment fort de l'année. Réunion de tous les adhérents pour
-                  valider les comptes, voter le budget prévisionnel et définir
-                  les orientations stratégiques du groupement.
-                </p>
-                <div className="pt-6 border-t border-slate-100 mt-auto">
-                  <span className="text-xs text-slate-400 uppercase tracking-wider font-semibold">
-                    Décisions Stratégiques
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Card Life 2 */}
-            <div className="bg-white shadow-xl rounded-sm overflow-hidden flex flex-col h-full border-b-4 border-giget-blue">
-              <div className="h-48 relative overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
-                  alt="Bureau"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-                <div className="absolute top-4 right-4 bg-white/95 px-3 py-1 text-xs font-bold tracking-widest text-giget-blue shadow-sm uppercase">
-                  Mensuel
-                </div>
-              </div>
-              <div className="p-8 flex-grow flex flex-col">
-                <h4 className="font-serif text-2xl text-giget-blue mb-4">
-                  Réunions de Bureau
-                </h4>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
-                  Une gouvernance active avec des réunions mensuelles du Conseil
-                  d'Administration pour assurer le pilotage opérationnel et le
-                  suivi des missions en cours.
-                </p>
-                <div className="pt-6 border-t border-slate-100 mt-auto">
-                  <span className="text-xs text-slate-400 uppercase tracking-wider font-semibold">
-                    Pilotage Opérationnel
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Card Life 3 */}
-            <div className="bg-white shadow-xl rounded-sm overflow-hidden flex flex-col h-full border-b-4 border-slate-500">
-              <div className="h-48 relative overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop"
-                  alt="Groupe travail"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-                <div className="absolute top-4 right-4 bg-white/95 px-3 py-1 text-xs font-bold tracking-widest text-slate-600 shadow-sm uppercase">
-                  Ponctuel
-                </div>
-              </div>
-              <div className="p-8 flex-grow flex flex-col">
-                <h4 className="font-serif text-2xl text-giget-blue mb-4">
-                  Groupes de Travail
-                </h4>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
-                  Espaces de réflexion technique (Ascenseurs) et juridique pour
-                  anticiper les évolutions réglementaires et partager les bonnes
-                  pratiques entre bailleurs.
-                </p>
-                <div className="pt-6 border-t border-slate-100 mt-auto">
-                  <span className="text-xs text-slate-400 uppercase tracking-wider font-semibold">
-                    Intelligence Collective
-                  </span>
-                </div>
-              </div>
-            </div>
+            {VIE_ASSOCIATIVE.map((item, index) => (
+              <VieAssociativeCard key={index} {...item} />
+            ))}
           </div>
         </div>
 
@@ -216,9 +244,6 @@ const Organization = () => {
                 <h4 className="text-lg font-bold text-giget-red tracking-widest uppercase mb-1">
                   Président
                 </h4>
-                <p className="text-sm text-slate-500 font-medium">
-                  Bailleurs Sociaux
-                </p>
                 {/* Line Down */}
                 <div className="absolute -bottom-12 left-1/2 w-[2px] h-12 bg-giget-blue"></div>
               </div>
