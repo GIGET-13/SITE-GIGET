@@ -86,25 +86,25 @@ const AnimatedModal = ({ isOpen, onClose, title, subtitle, children, onNext, onP
                         </div>
 
                         {/* Footer */}
-                        <div className="p-6 bg-slate-50 border-t border-slate-100 flex justify-between items-center sm:flex-row flex-col-reverse gap-4 min-h-[85px]">
+                        <div className="p-4 sm:p-6 bg-slate-50 border-t border-slate-100 flex flex-col-reverse sm:flex-row justify-between items-stretch sm:items-center gap-3 sm:gap-4 min-h-[85px]">
                             <button
                                 onClick={onClose}
-                                className="bg-white border border-slate-200 text-slate-500 w-full sm:w-auto font-bold py-3 px-8 transition-all hover:text-giget-red hover:border-giget-red/30 tracking-widest text-xs uppercase shadow-sm"
+                                className="w-full sm:w-auto bg-white border border-slate-200 text-slate-500 font-bold py-3 px-8 transition-all hover:text-giget-red hover:border-giget-red/30 tracking-widest text-xs uppercase shadow-sm"
                             >
                                 Fermer
                             </button>
-                            <div className="flex items-center justify-end gap-2 w-full sm:w-auto">
+                            <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-3 sm:gap-2 w-full sm:w-auto">
                                 {onPrev && (
-                                    <button onClick={onPrev} className="px-5 py-3 bg-white border border-slate-200 text-xs font-bold uppercase tracking-widest text-giget-blue hover:text-giget-red hover:border-giget-red/30 transition-all rounded-sm shadow-sm flex items-center gap-2 flex-grow sm:flex-grow-0 justify-center">
-                                        &larr; <span className="inline">Précédent</span>
+                                    <button onClick={onPrev} className="w-full sm:w-auto px-5 py-3 bg-white border border-slate-200 text-xs font-bold uppercase tracking-widest text-giget-blue hover:text-giget-red hover:border-giget-red/30 transition-all rounded-sm shadow-sm flex items-center justify-center gap-2">
+                                        &larr; <span>Précédent</span>
                                     </button>
                                 )}
                                 {onNext && (
-                                    <button onClick={onNext} className="group relative bg-[#016fae] text-white text-xs font-bold uppercase tracking-widest px-8 py-3 hover:bg-[#015282] transition-all duration-300 shadow-md flex items-center overflow-hidden w-full sm:w-auto justify-center min-w-[200px]">
-                                        <span className="transition-transform duration-300 group-hover:-translate-x-5">
+                                    <button onClick={onNext} className="group relative w-full sm:w-auto bg-[#016fae] text-white text-xs font-bold uppercase tracking-widest px-8 py-3 hover:bg-[#015282] transition-all duration-300 shadow-md flex items-center justify-center overflow-hidden">
+                                        <span className="transition-transform duration-300 sm:group-hover:-translate-x-5">
                                             Suivant
                                         </span>
-                                        <span className="absolute right-5 opacity-0 transform translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                                        <span className="hidden sm:block absolute right-5 opacity-0 transform translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
                                             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                                         </span>
                                     </button>

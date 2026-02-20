@@ -53,7 +53,7 @@ const Home = () => {
       {/* SECTION 1: INTRO (Mobile/Tablet: Text -> Image | Desktop: Image -> Text) */}
       <div className="flex flex-col-reverse lg:flex-row min-h-[90vh]">
         {/* Image Side */}
-        <div className="w-full lg:w-1/2 relative min-h-[40vh] md:min-h-[50vh] lg:h-auto">
+        <div className="w-full lg:w-1/2 relative h-[40vh] md:h-[50vh] lg:h-auto">
           <ParallaxImage
             src="https://images.unsplash.com/photo-1541194577687-8c63bf9e7ee3?q=80&w=1935&auto=format&fit=crop"
             alt="Architecture Moderne Marseille"
@@ -146,7 +146,7 @@ const Home = () => {
         </div>
 
         {/* Image Side */}
-        <div className="w-full lg:w-1/2 relative min-h-[40vh] md:min-h-[50vh] lg:h-auto">
+        <div className="w-full lg:w-1/2 relative h-[40vh] md:h-[50vh] lg:h-auto">
           <ParallaxImage
             src="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?q=80&w=2074&auto=format&fit=crop"
             alt="Technicien GIGET"

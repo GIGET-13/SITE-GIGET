@@ -89,13 +89,13 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          className="hidden md:block relative h-[50vh] md:h-[60vh] lg:h-[70vh] w-full will-change-transform"
+          className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] w-full will-change-transform mt-8 md:mt-0"
           style={{ transform: `translateY(${scrollY * -0.05}px)` }}
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
-          <div className="absolute top-5 right-0 w-[90%] h-full overflow-hidden rounded-tl-[120px] shadow-2xl border-r-8 border-b-8 border-white">
+          <div className="absolute top-0 right-0 w-[90%] md:top-5 h-full overflow-hidden rounded-tl-[80px] md:rounded-tl-[120px] shadow-2xl border-r-4 md:border-r-8 border-b-4 md:border-b-8 border-white">
             <img
               src="https://images.unsplash.com/photo-1650668015785-742c621331cd?q=80&w=1170&auto=format&fit=crop"
               alt="Intérieur Ascenseur Moderne"
@@ -105,7 +105,7 @@ const Hero = () => {
           </div>
 
           <motion.div
-            className="absolute bottom-24 left-0 bg-white p-8 shadow-xl border-l-4 border-giget-red max-w-xs z-20"
+            className="absolute bottom-4 md:bottom-24 left-0 bg-white p-4 md:p-8 shadow-xl border-l-4 border-giget-red max-w-[200px] sm:max-w-xs z-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
