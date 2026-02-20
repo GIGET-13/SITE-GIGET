@@ -11,9 +11,15 @@ const Hero = () => {
         setScrollY(window.pageYOffset);
       });
     };
-    window.addEventListener("scroll", handleScroll);
+
+    // Only detect scroll on desktop to avoid parallax on mobile
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+    }
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const isMobile = typeof window !== "undefined" ? window.innerWidth < 768 : false;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -34,8 +40,8 @@ const Hero = () => {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-16 md:pt-14 lg:pt-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center h-full">
         <motion.div
-          className="max-w-2xl will-change-transform"
-          style={{ transform: `translateY(${scrollY * -0.2}px)` }}
+          className="max-w-2xl will-change-transform mt-16 md:mt-0"
+          style={{ transform: isMobile ? 'none' : `translateY(${scrollY * -0.2}px)` }}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -90,7 +96,7 @@ const Hero = () => {
 
         <motion.div
           className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] w-full will-change-transform mt-8 md:mt-0"
-          style={{ transform: `translateY(${scrollY * -0.05}px)` }}
+          style={{ transform: isMobile ? 'none' : `translateY(${scrollY * -0.05}px)` }}
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
