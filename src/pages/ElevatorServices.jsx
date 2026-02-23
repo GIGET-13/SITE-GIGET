@@ -7,86 +7,181 @@ import { motion } from "framer-motion";
 
 const SERVICES = [
   {
-    id: 'controles',
+    id: "controles",
     subtitle: "01. Contrôles & Diagnostics",
     title: "Suivi du Parc",
-    summary: "Réalisation des Contrôles Techniques Quinquennaux (CTQ), diagnostics de vétusté, et audits de maintenance inopinés pour vérifier la réalité des visites.",
+    summary:
+      "Réalisation des Contrôles Techniques Quinquennaux (CTQ), diagnostics de vétusté, et audits de maintenance inopinés pour vérifier la réalité des visites.",
     details: (
       <div className="space-y-6">
         <p>
-          Nos experts assurent un suivi rigoureux de votre parc d'ascenseurs en réalisant des contrôles périodiques et inopinés. L'objectif est de garantir non seulement le respect strict de la réglementation en vigueur (dont la loi SAE), mais aussi d'optimiser la durée de vie de vos équipements.
+          Nos experts assurent un suivi rigoureux de votre parc d'ascenseurs en
+          réalisant des contrôles périodiques et inopinés. L'objectif est de
+          garantir non seulement le respect strict de la réglementation en
+          vigueur (dont la loi SAE), mais aussi d'optimiser la durée de vie de
+          vos équipements.
         </p>
         <ul className="space-y-3">
-          <li className="flex gap-3 items-start"><CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" /><span className="text-slate-700"><strong>Contrôles Techniques Quinquennaux (CTQ)</strong> complets pour certifier la sécurité.</span></li>
-          <li className="flex gap-3 items-start"><CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" /><span className="text-slate-700"><strong>Diagnostics de vétusté</strong> afin d'anticiper les modernisations budgétaires.</span></li>
-          <li className="flex gap-3 items-start"><CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" /><span className="text-slate-700"><strong>Audits de maintenance inopinés</strong> pour vérifier les passages réels des techniciens ascensoristes et la qualité des opérations effectuées.</span></li>
+          <li className="flex gap-3 items-start">
+            <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
+            <span className="text-slate-700">
+              <strong>Contrôles Techniques Quinquennaux (CTQ)</strong> complets
+              pour certifier la sécurité.
+            </span>
+          </li>
+          <li className="flex gap-3 items-start">
+            <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
+            <span className="text-slate-700">
+              <strong>Diagnostics de vétusté</strong> afin d'anticiper les
+              modernisations budgétaires.
+            </span>
+          </li>
+          <li className="flex gap-3 items-start">
+            <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
+            <span className="text-slate-700">
+              <strong>Audits de maintenance inopinés</strong> pour vérifier les
+              passages réels des techniciens ascensoristes et la qualité des
+              opérations effectuées.
+            </span>
+          </li>
         </ul>
       </div>
-    )
+    ),
   },
   {
-    id: 'amo',
+    id: "amo",
     subtitle: "02. Assistance Maîtrise d'Ouvrage",
     title: "AMO & MOE",
-    summary: "Accompagnement complet pour les travaux de modernisation, remplacement complet ou mise en conformité. Rédaction des CCTP, analyse des offres et suivi de chantier.",
+    summary:
+      "Accompagnement complet pour les travaux de modernisation, remplacement complet ou mise en conformité. Rédaction des CCTP, analyse des offres et suivi de chantier.",
     details: (
       <div className="space-y-6">
         <p>
-          Le GIGET agit en tant que partenaire technique du bailleur pour tous les projets lourds. La modernisation ou le remplacement d'un ascenseur sont des investissements majeurs que nous sécurisons techniquement et financièrement.
+          Le GIGET agit en tant que partenaire technique du bailleur pour tous
+          les projets lourds. La modernisation ou le remplacement d'un ascenseur
+          sont des investissements majeurs que nous sécurisons techniquement et
+          financièrement.
         </p>
         <ul className="space-y-3">
-          <li className="flex gap-3 items-start"><CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" /><span className="text-slate-700"><strong>Rédaction CCTP :</strong> Élaboration des Cahiers des Clauses Techniques Particulières pour définir précisément le besoin.</span></li>
-          <li className="flex gap-3 items-start"><CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" /><span className="text-slate-700"><strong>Analyse des offres :</strong> Dépouillement technique et financier des propositions des prestataires, négociation.</span></li>
-          <li className="flex gap-3 items-start"><CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" /><span className="text-slate-700"><strong>Suivi de chantier :</strong> Pilotage complet depuis la réunion de lancement jusqu'à la réception technique.</span></li>
+          <li className="flex gap-3 items-start">
+            <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
+            <span className="text-slate-700">
+              <strong>Rédaction CCTP :</strong> Élaboration des Cahiers des
+              Clauses Techniques Particulières pour définir précisément le
+              besoin.
+            </span>
+          </li>
+          <li className="flex gap-3 items-start">
+            <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
+            <span className="text-slate-700">
+              <strong>Analyse des offres :</strong> Dépouillement technique et
+              financier des propositions des prestataires, négociation.
+            </span>
+          </li>
+          <li className="flex gap-3 items-start">
+            <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
+            <span className="text-slate-700">
+              <strong>Suivi de chantier :</strong> Pilotage complet depuis la
+              réunion de lancement jusqu'à la réception technique.
+            </span>
+          </li>
         </ul>
       </div>
-    )
+    ),
   },
   {
-    id: 'gestion',
+    id: "gestion",
     subtitle: "03. Gestion Administrative",
     title: "Suivi des Contrats",
-    summary: "Vérification des factures, application des pénalités de retard, et gestion des clauses contractuelles pour défendre les intérêts financiers du bailleur.",
+    summary:
+      "Vérification des factures, application des pénalités de retard, et gestion des clauses contractuelles pour défendre les intérêts financiers du bailleur.",
     details: (
       <div className="space-y-6">
         <p>
-          Une gestion fine de vos contrats de maintenance est indispensable. Derrière chaque ligne de facturation, nous mettons en œuvre un contrôle administratif exhaustif afin de garantir que vous ne payez que ce qui est dû.
+          Une gestion fine de vos contrats de maintenance est indispensable.
+          Derrière chaque ligne de facturation, nous mettons en œuvre un
+          contrôle administratif exhaustif afin de garantir que vous ne payez
+          que ce qui est dû.
         </p>
         <ul className="space-y-3">
-          <li className="flex gap-3 items-start"><CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" /><span className="text-slate-700"><strong>Vérification des factures :</strong> Contrôle de l'adéquation entre devis et facturation des ascensoristes.</span></li>
-          <li className="flex gap-3 items-start"><CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" /><span className="text-slate-700"><strong>Pénalités :</strong> Calcul et application stricte des pénalités de retard lors des pannes.</span></li>
-          <li className="flex gap-3 items-start"><CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" /><span className="text-slate-700"><strong>Clauses contractuelles :</strong> Suivi des indicateurs de performance (KPIs) pour assurer un taux de disponibilité maximal.</span></li>
+          <li className="flex gap-3 items-start">
+            <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
+            <span className="text-slate-700">
+              <strong>Vérification des factures :</strong> Contrôle de
+              l'adéquation entre devis et facturation des ascensoristes.
+            </span>
+          </li>
+          <li className="flex gap-3 items-start">
+            <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
+            <span className="text-slate-700">
+              <strong>Pénalités :</strong> Calcul et application stricte des
+              pénalités de retard lors des pannes.
+            </span>
+          </li>
+          <li className="flex gap-3 items-start">
+            <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
+            <span className="text-slate-700">
+              <strong>Clauses contractuelles :</strong> Suivi des indicateurs de
+              performance (KPIs) pour assurer un taux de disponibilité maximal.
+            </span>
+          </li>
         </ul>
       </div>
-    )
+    ),
   },
   {
-    id: 'reception',
+    id: "reception",
     subtitle: "04. Levée des Réserves",
     title: "Réception de Travaux",
-    summary: "Contrôle rigoureux en fin de chantier pour s'assurer que tous les travaux prévus ont été réalisés selon les règles de l'art avant le paiement final.",
+    summary:
+      "Contrôle rigoureux en fin de chantier pour s'assurer que tous les travaux prévus ont été réalisés selon les règles de l'art avant le paiement final.",
     details: (
       <div className="space-y-6">
         <p>
-          La fin d'un chantier nécessite une inspection méticuleuse. Notre équipe d'ingénieurs procède à un audit complet de la qualité des travaux avant la réception définitive de l'équipement, vous protégeant ainsi contre les malfaçons.
+          La fin d'un chantier nécessite une inspection méticuleuse. Notre
+          équipe d'ingénieurs procède à un audit complet de la qualité des
+          travaux avant la réception définitive de l'équipement, vous protégeant
+          ainsi contre les malfaçons.
         </p>
         <ul className="space-y-3">
-          <li className="flex gap-3 items-start"><CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" /><span className="text-slate-700"><strong>Audit de fin de travaux :</strong> Traitement technique complet des réceptions.</span></li>
-          <li className="flex gap-3 items-start"><CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" /><span className="text-slate-700"><strong>Conformité :</strong> Vérification de la Déclaration de Conformité et des Procès Verbaux.</span></li>
-          <li className="flex gap-3 items-start"><CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" /><span className="text-slate-700"><strong>Levée des réserves :</strong> Émission du rapport de réserves et suivi sans concession jusqu'à résolution totale.</span></li>
+          <li className="flex gap-3 items-start">
+            <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
+            <span className="text-slate-700">
+              <strong>Audit de fin de travaux :</strong> Traitement technique
+              complet des réceptions.
+            </span>
+          </li>
+          <li className="flex gap-3 items-start">
+            <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
+            <span className="text-slate-700">
+              <strong>Conformité :</strong> Vérification de la Déclaration de
+              Conformité et des Procès Verbaux.
+            </span>
+          </li>
+          <li className="flex gap-3 items-start">
+            <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
+            <span className="text-slate-700">
+              <strong>Levée des réserves :</strong> Émission du rapport de
+              réserves et suivi sans concession jusqu'à résolution totale.
+            </span>
+          </li>
         </ul>
       </div>
-    )
-  }
+    ),
+  },
 ];
 
 const ElevatorServices = () => {
   const [activeModal, setActiveModal] = useState(null);
 
-  const activeService = SERVICES.find(s => s.id === activeModal);
-  const activeIndex = SERVICES.findIndex(s => s.id === activeModal);
-  const handlePrev = activeIndex > 0 ? () => setActiveModal(SERVICES[activeIndex - 1].id) : null;
-  const handleNext = activeIndex !== -1 && activeIndex < SERVICES.length - 1 ? () => setActiveModal(SERVICES[activeIndex + 1].id) : null;
+  const activeService = SERVICES.find((s) => s.id === activeModal);
+  const activeIndex = SERVICES.findIndex((s) => s.id === activeModal);
+  const handlePrev =
+    activeIndex > 0 ? () => setActiveModal(SERVICES[activeIndex - 1].id) : null;
+  const handleNext =
+    activeIndex !== -1 && activeIndex < SERVICES.length - 1
+      ? () => setActiveModal(SERVICES[activeIndex + 1].id)
+      : null;
 
   return (
     <section className="bg-white min-h-screen">
@@ -144,7 +239,7 @@ const ElevatorServices = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            src="https://plus.unsplash.com/premium_photo-1664300696727-86e9d330541e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="/man-electrical-technician-working-switchboard-with-fuses-uses-tablet.jpg"
             alt="Illustration Ascenseur"
             className="w-full h-auto object-cover shadow-2xl"
           />
@@ -181,9 +276,7 @@ const ElevatorServices = () => {
                 <h3 className="text-2xl font-serif text-giget-blue mb-4">
                   {service.title}
                 </h3>
-                <p className="text-slate-600 mb-6">
-                  {service.summary}
-                </p>
+                <p className="text-slate-600 mb-6">{service.summary}</p>
               </div>
               <button
                 className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-giget-blue group-hover:text-giget-red transition-colors"

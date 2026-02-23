@@ -19,19 +19,24 @@ const Hero = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isMobile = typeof window !== "undefined" ? window.innerWidth < 768 : false;
+  const isMobile =
+    typeof window !== "undefined" ? window.innerWidth < 768 : false;
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15, delayChildren: 0.2 }
-    }
+      transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
   };
 
   return (
@@ -41,36 +46,47 @@ const Hero = () => {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-16 md:pt-14 lg:pt-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center h-full">
         <motion.div
           className="max-w-2xl will-change-transform mt-16 md:mt-0"
-          style={{ transform: isMobile ? 'none' : `translateY(${scrollY * -0.2}px)` }}
+          style={{
+            transform: isMobile ? "none" : `translateY(${scrollY * -0.2}px)`,
+          }}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <motion.div variants={itemVariants} className="flex items-center gap-4 mb-8">
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center gap-4 mb-8"
+          >
             <span className="h-[2px] w-12 bg-giget-red"></span>
             <span className="text-giget-red uppercase tracking-[0.3em] text-xs font-bold">
               Association des Bailleurs Sociaux
             </span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="font-serif text-5xl md:text-6xl lg:text-7xl text-giget-blue leading-[1.1] mb-8 drop-shadow-sm">
+          <motion.h1
+            variants={itemVariants}
+            className="font-serif text-5xl md:text-6xl lg:text-7xl text-giget-blue leading-[1.1] mb-8 drop-shadow-sm"
+          >
             Expertise Technique <br />
             <span className="italic font-light text-giget-red">
               Au service de l'Habitat.
             </span>
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-lg text-slate-600 max-w-lg font-light leading-relaxed mb-10">
+          <motion.p
+            variants={itemVariants}
+            className="text-lg text-slate-600 max-w-lg font-light leading-relaxed mb-10"
+          >
             Le GIGET accompagne les bailleurs sociaux dans la gestion technique
             de leur patrimoine : Ascenseurs, Diagnostics, AMO et Plomberie (Viae
             Domo).
           </motion.p>
 
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 items-start mt-4">
-            <Link
-              to="/ascenseurs"
-              className="hero-btn type--bordeaux"
-            >
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col sm:flex-row gap-6 items-start mt-4"
+          >
+            <Link to="/ascenseurs" className="hero-btn type--bordeaux">
               <div className="hero-btn__line"></div>
               <div className="hero-btn__line"></div>
               <span className="hero-btn__text">Ascenseurs</span>
@@ -79,10 +95,7 @@ const Hero = () => {
                 <div className="hero-btn__drow2"></div>
               </div>
             </Link>
-            <Link
-              to="/plomberie"
-              className="hero-btn type--blue"
-            >
+            <Link to="/plomberie" className="hero-btn type--blue">
               <div className="hero-btn__line"></div>
               <div className="hero-btn__line"></div>
               <span className="hero-btn__text">Viae Domo</span>
@@ -96,7 +109,9 @@ const Hero = () => {
 
         <motion.div
           className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] w-full will-change-transform mt-8 md:mt-0"
-          style={{ transform: isMobile ? 'none' : `translateY(${scrollY * -0.05}px)` }}
+          style={{
+            transform: isMobile ? "none" : `translateY(${scrollY * -0.05}px)`,
+          }}
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -120,8 +135,11 @@ const Hero = () => {
               Transparence
             </p>
             <p className="text-xs uppercase tracking-widest text-slate-500 leading-relaxed">
-              Modèle associatif à but non lucratif. Restitution des provisions
-              aux adhérents.
+              Modèle associatif à but non lucratif.
+              <br />
+              Exclu des procédures de consultation en vertu des articles L2511-1
+              à L2511-5 de la commande publique relatifs à la quasi-régie
+              (in-house).
             </p>
           </motion.div>
         </motion.div>
