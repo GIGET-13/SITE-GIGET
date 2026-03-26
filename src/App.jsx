@@ -2,7 +2,6 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Header from "./components/layout/Header";
 import Hero from "./components/sections/Hero";
-import Partners from "./components/sections/Partners";
 import Footer from "./components/layout/Footer";
 import { LocationProvider } from "./context/LocationContext";
 
@@ -22,7 +21,6 @@ function App() {
           {isHome && (
             <>
               <Hero />
-              <Partners />
             </>
           )}
           <Outlet />
