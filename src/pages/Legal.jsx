@@ -16,7 +16,7 @@ const Legal = () => {
             </p>
             <p className="mt-4">
               <strong>Propriétaire et Éditeur du site :</strong><br />
-              <strong>GIGET (Groupement des Indépendants en Gestion d'Équipements Techniques)</strong><br />
+              <strong>GIGET (Groupement Inter organismes sociaux pour la Gestion d'Équipements Techniques)</strong><br />
               Association déclarée, régie par la loi du 1er juillet 1901 et le décret du 16 août 1901.<br />
               Siège social : <a href="https://maps.google.com/?q=97+Avenue+de+la+Corse,+13007+Marseille" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 bg-slate-100 text-giget-blue px-2 py-0.5 rounded-md text-sm font-medium hover:bg-giget-red hover:text-white transition-colors border border-slate-200 shadow-sm mx-1"> 97 Avenue de la Corse, 13007 Marseille, France</a>.<br />
               SIRET : [Numéro de SIRET du GIGET à compléter]<br />

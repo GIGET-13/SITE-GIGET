@@ -8,7 +8,7 @@ const PILLARS = [
     subtitle: "Loi 1901",
     color: "#800020", // Bordeaux Rubis
     summary:
-      "Structure à but non lucratif créée pour mutualiser les coûts et l'expertise. Le GIGET n'a pas vocation à faire du profit mais à optimiser les charges locatives.",
+      "Structure à but non lucratif créée pour mutualiser les coûts et l'expertise.",
     details:
       "En tant qu'association Loi 1901, notre indépendance financière et morale est totale. Tous nos adhérents disposent du même niveau d'information et contribuent à part égale aux décisions stratégiques.",
   },
@@ -17,7 +17,7 @@ const PILLARS = [
     subtitle: "Bailleurs",
     color: "#1e40af", // Bleu Roi
     summary:
-      "Dirigé par un Conseil d'Administration (CA) composé exclusivement de représentants des Bailleurs Sociaux. Ils valident le budget, les missions et la stratégie.",
+      "Dirigé par un Conseil d'Administration (CA) composé de Bailleurs Sociaux adhérents. Ils valident le budget, les missions et la stratégie.",
     details:
       "Chaque décision impactant la vie de l'association ou les fonds mutualisés passe par une validation stricte du CA. Cela garantit une transparence absolue et une adéquation parfaite avec les intérêts des locataires.",
   },
@@ -28,7 +28,7 @@ const PILLARS = [
     summary:
       "Fonctionnement par appel à provisions et Unités d'Œuvre. Restitution systématique des sommes non dépensées en fin d'exercice aux adhérents.",
     details:
-      "Notre modèle repose sur une refacturation au coût réel (Unités d'Œuvre). Des bilans quadrimestriels sont présentés pour piloter précisément le budget et ajuster, si besoin, les provisions appelées.",
+      "Notre modèle repose sur une refacturation au coût réel (Unités d'Œuvre). Des bilans trimestriels sont présentés pour piloter précisément le budget et ajuster, si besoin, les provisions appelées.",
   },
 ];
 
@@ -75,7 +75,7 @@ const PillarCard = ({ title, subtitle, summary, details, color, index }) => {
 
 const VIE_ASSOCIATIVE = [
   {
-    image: "/people-taking-part-high-protocol-event.jpg",
+    image: "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=2069&auto=format&fit=crop",
     frequency: "Annuel",
     title: "Assemblée Générale",
     summary:
@@ -115,9 +115,9 @@ const VIE_ASSOCIATIVE = [
     summary:
       "Espaces de réflexion technique (Ascenseurs) et juridique pour anticiper les évolutions réglementaires et partager les bonnes pratiques entre bailleurs.",
     details: [
-      "Ateliers techniques sur les nouvelles normes (Loi SAE, etc.)",
+      "Ateliers techniques sur les nouvelles normes et nouvelles réglementations",
       "Élaboration commune de cahiers des charges types",
-      "Retours d'expériences (REX) sur des sinistres ou innovations",
+      "Retours d'expériences sur des sinistres ou innovations",
       "Veille juridique et technologique partagée",
     ],
     tag: "Intelligence Collective",
@@ -212,6 +212,38 @@ const Organization = () => {
           <div className="w-24 h-1 bg-giget-red mx-auto mt-8"></div>
         </div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="-mt-6 mb-12 bg-gradient-to-r from-white via-slate-50 to-white border border-slate-200 shadow-sm"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr] items-stretch">
+            <div className="bg-giget-red px-8 py-8 lg:py-10 flex items-center border-b lg:border-b-0 lg:border-r border-white/10">
+              <div>
+                <p className="text-xs uppercase tracking-[0.35em] text-white/70 mb-3">
+                  Transparence
+                </p>
+                <h3 className="font-serif text-3xl text-white leading-tight">
+                  Modèle
+                  <span className="block font-light text-white/85">associatif</span>
+                </h3>
+              </div>
+            </div>
+
+            <div className="px-8 py-8 md:px-10 md:py-9 border-l-4 border-giget-red flex items-center">
+              <p className="text-sm md:text-[15px] uppercase tracking-[0.22em] text-slate-500 leading-relaxed max-w-4xl my-0">
+                Modèle associatif à but non lucratif.
+                <br />
+                Exclu des procédures de consultation en vertu des articles L2511-1
+                à L2511-5 de la commande publique relatifs à la quasi-régie
+                (in-house).
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* 3 Pillars - INTERACTIVE DESIGN */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
           {PILLARS.map((pillar, index) => (
@@ -296,11 +328,11 @@ const Organization = () => {
                         Services Transverses
                       </h5>
                       <div className="mt-3 space-y-2">
-                        <div className="text-md font-medium text-giget-red  bg-white py-1 px-3 rounded border border-slate-100">
-                          RH
+                        <div className="text-md font-bold text-giget-red bg-white py-2 px-4 rounded border border-slate-100 shadow-sm w-full">
+                          Ressources Humaines & Administratif
                         </div>
-                        <div className="text-md font-medium text-giget-red  bg-white py-1 px-3 rounded border border-slate-100">
-                          Chargé Informatique
+                        <div className="text-md font-bold text-giget-red bg-white py-2 px-4 rounded border border-slate-100 shadow-sm w-full">
+                          Chargés Systèmes d'Information
                         </div>
                       </div>
                     </div>
@@ -337,12 +369,13 @@ const Organization = () => {
                       </h5>
                       <div className="mt-4 flex flex-col items-center gap-4">
                         <div className="text-md font-bold text-giget-red  bg-white py-2 px-4 rounded border border-slate-100 shadow-sm w-full">
-                          Chargé d'Affaires Plomberie
+                          Chef d'Équipe Plomberie
                         </div>
 
                         <div className="text-md font-bold text-giget-red  bg-white py-2 px-4 rounded border border-slate-100 shadow-sm w-full">
                           Consultants Plomberie
                         </div>
+
                       </div>
                     </div>
                   </div>

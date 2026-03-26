@@ -12,10 +12,10 @@ const PlumbingServices = () => (
     <PageBanner
       subtitle="Pôle Plomberie & Robinetterie"
       title="Viae Domo"
-      description="Une solution mutualisée pour la maintenance préventive de la plomberie dans les logements sociaux."
+      description="Une solution mutualisée pour la maintenance préventive et curative de la plomberie dans les logements sociaux."
       bgColor="bg-[#002f3c]"
       bgImage="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=2070&auto=format&fit=crop"
-      bgOpacity="opacity-45"
+      bgOpacity="opacity-65"
       textColors={{ subtitle: "text-white", description: "text-cyan-100" }}
     />
     <ContentSection>
@@ -27,7 +27,7 @@ const PlumbingServices = () => (
           transition={{ duration: 0.5, delay: 0.3 }}
           src="https://images.unsplash.com/photo-1749532125405-70950966b0e5?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Illustration Plomberie"
-          className="w-full h-auto object-cover shadow-2xl"
+          className="w-full h-auto object-cover shadow-2xl border-[3px] border-gray-300"
         />
         <motion.div
           initial={{ opacity: 0, x: 30 }}
@@ -39,14 +39,14 @@ const PlumbingServices = () => (
             L'Approche Viae Domo
           </h2>
           <p className="text-slate-600 text-lg leading-relaxed mb-6">
-            Face à l'augmentation des coûts de l'eau et aux sinistres dégâts des
-            eaux, le GIGET a développé &quot;Viae Domo&quot;. C'est un service dédié à
-            l'entretien préventif et curatif (en cas d'appel on intervient) de la robinetterie et des équipements sanitaires.
-          </p>
-          <p className="text-slate-600 text-lg leading-relaxed">
-            L'objectif est double : améliorer le confort des locataires en
-            réduisant les fuites, et maîtriser les charges récupérables pour les
-            bailleurs.
+            Face à la demande de nos adhérents le GIGET a développé &quot;Viae Domo&quot;. C'est un service dédié à
+            l'entretien préventif et curatif (en cas d'appel on intervient) de la robinetterie et des points d'eau du logement.
+
+            <p className="text-slate-600 text-lg leading-relaxed mt-6">
+              L'objectif est double : améliorer le confort des locataires en
+              réduisant les fuites, et maîtriser les charges récupérables pour les
+              bailleurs.
+            </p>
           </p>
         </motion.div>
       </TwoColumnGrid>
@@ -58,10 +58,11 @@ const PlumbingServices = () => (
           description="Visites annuelles programmées pour vérifier l'ensemble des équipements. Nous anticipons les pannes pour garantir la tranquillité des résidents."
           items={[
             "Vérification des chasses d'eau",
-            "Remplacement des joints et joints spi",
+            "Remplacement des joints",
             "Contrôle de l'étanchéité des siphons",
             "Réglage des débits de robinets",
-            "Détartrage des mousseurs"
+            "Détartrage des mousseurs",
+            "Etc..."
           ]}
         />
         <ExpandableFeatureCard

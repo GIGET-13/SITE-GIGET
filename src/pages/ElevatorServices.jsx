@@ -11,37 +11,38 @@ const SERVICES = [
     subtitle: "01. Contrôles & Diagnostics",
     title: "Suivi du Parc",
     summary:
-      "Réalisation des Contrôles Techniques Quinquennaux (CTQ), diagnostics de vétusté, et audits de maintenance inopinés pour vérifier la réalité des visites.",
+      "Réalisation des Contrôles Techniques Quinquennaux (CTQ), diagnostics qualitatifs, et audits inopinés sur les ascenseurs et automatismes de garage.",
     details: (
       <div className="space-y-6">
         <p>
-          Nos experts assurent un suivi rigoureux de votre parc d'ascenseurs en
-          réalisant des contrôles périodiques et inopinés. L'objectif est de
-          garantir non seulement le respect strict de la réglementation en
-          vigueur (dont la loi SAE), mais aussi d'optimiser la durée de vie de
-          vos équipements.
+          Nos experts assurent un suivi rigoureux de votre parc d'ascenseurs et
+          d'automatismes de garage en réalisant des contrôles périodiques et
+          inopinés. L'objectif est de garantir non seulement le respect strict
+          de la réglementation en vigueur, mais aussi d'optimiser la durée de
+          vie de vos équipements.
         </p>
         <ul className="space-y-3">
           <li className="flex gap-3 items-start">
             <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
             <span className="text-slate-700">
               <strong>Contrôles Techniques Quinquennaux (CTQ)</strong> complets
-              pour certifier la sécurité.
+              pour certifier la sécurité des installations.
             </span>
           </li>
           <li className="flex gap-3 items-start">
             <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
             <span className="text-slate-700">
-              <strong>Diagnostics de vétusté</strong> afin d'anticiper les
-              modernisations budgétaires.
+              <strong>Diagnostics qualitatifs</strong> afin d'anticiper les
+              modernisations budgétaires sur les ascenseurs comme sur les
+              automatismes de garage.
             </span>
           </li>
           <li className="flex gap-3 items-start">
             <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
             <span className="text-slate-700">
-              <strong>Audits de maintenance inopinés</strong> pour vérifier les
-              passages réels des techniciens ascensoristes et la qualité des
-              opérations effectuées.
+              <strong>Audits inopinés</strong> pour vérifier la réalité des
+              interventions et la qualité des opérations effectuées sur les deux
+              types d'équipements.
             </span>
           </li>
         </ul>
@@ -51,16 +52,16 @@ const SERVICES = [
   {
     id: "amo",
     subtitle: "02. Assistance Maîtrise d'Ouvrage",
-    title: "AMO & MOE",
+    title: "AMO",
     summary:
-      "Accompagnement complet pour les travaux de modernisation, remplacement complet ou mise en conformité. Rédaction des CCTP, analyse des offres et suivi de chantier.",
+      "Accompagnement complet pour les travaux de modernisation, remplacement complet ou mise en conformité des ascenseurs et automatismes de garage.",
     details: (
       <div className="space-y-6">
         <p>
           Le GIGET agit en tant que partenaire technique du bailleur pour tous
-          les projets lourds. La modernisation ou le remplacement d'un ascenseur
-          sont des investissements majeurs que nous sécurisons techniquement et
-          financièrement.
+          les projets lourds. La modernisation ou le remplacement d'un
+          ascenseur, comme d'un automatisme de garage, sont des investissements
+          majeurs que nous sécurisons techniquement et financièrement.
         </p>
         <ul className="space-y-3">
           <li className="flex gap-3 items-start">
@@ -82,7 +83,7 @@ const SERVICES = [
             <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
             <span className="text-slate-700">
               <strong>Suivi de chantier :</strong> Pilotage complet depuis la
-              réunion de lancement jusqu'à la réception technique.
+              réunion de lancement jusqu'à la réception finale.
             </span>
           </li>
         </ul>
@@ -94,7 +95,7 @@ const SERVICES = [
     subtitle: "03. Gestion Administrative",
     title: "Suivi des Contrats",
     summary:
-      "Vérification des factures, application des pénalités de retard, et gestion des clauses contractuelles pour défendre les intérêts financiers du bailleur.",
+      "Suivi des réserves, des pénalités de retard et gestion des clauses contractuelles pour défendre les intérêts financiers du bailleur.",
     details: (
       <div className="space-y-6">
         <p>
@@ -114,15 +115,15 @@ const SERVICES = [
           <li className="flex gap-3 items-start">
             <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
             <span className="text-slate-700">
-              <strong>Pénalités :</strong> Calcul et application stricte des
-              pénalités de retard lors des pannes.
+              <strong>Pénalités :</strong> Calcul et suivi des
+              pénalités contractuelles.
             </span>
           </li>
           <li className="flex gap-3 items-start">
             <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
             <span className="text-slate-700">
               <strong>Clauses contractuelles :</strong> Suivi des indicateurs de
-              performance (KPIs) pour assurer un taux de disponibilité maximal.
+              performance (KPIs) pour assurer un taux de disponibilité maximal et le taux de visites contractuel.
             </span>
           </li>
         </ul>
@@ -131,38 +132,41 @@ const SERVICES = [
   },
   {
     id: "reception",
-    subtitle: "04. Levée des Réserves",
-    title: "Réception de Travaux",
+    subtitle: "04. Volet travaux",
+    title: "Assistance à maîtrise d'ouvrage travaux",
     summary:
-      "Contrôle rigoureux en fin de chantier pour s'assurer que tous les travaux prévus ont été réalisés selon les règles de l'art avant le paiement final.",
+      "Audit technique des installations, élaboration du Dossier de Consultation des Entreprises (DCE), appui à la sélection des prestataires et réception définitive des ouvrages.",
     details: (
       <div className="space-y-6">
-        <p>
-          La fin d'un chantier nécessite une inspection méticuleuse. Notre
-          équipe d'ingénieurs procède à un audit complet de la qualité des
-          travaux avant la réception définitive de l'équipement, vous protégeant
-          ainsi contre les malfaçons.
+        <p className="text-slate-700 leading-relaxed">
+          Le GIGET est en capacité de s'occuper de tous les dossiers de
+          consultation relatifs aux opérations de modernisation ou de
+          remplacement par appareil neuf, en accompagnant le bailleur à chaque
+          étape du projet.
         </p>
         <ul className="space-y-3">
           <li className="flex gap-3 items-start">
             <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
             <span className="text-slate-700">
-              <strong>Audit de fin de travaux :</strong> Traitement technique
-              complet des réceptions.
+              <strong>Modernisation :</strong> définition des besoins techniques
+              et préparation du dossier de consultation pour les opérations de
+              modernisation.
             </span>
           </li>
           <li className="flex gap-3 items-start">
             <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
             <span className="text-slate-700">
-              <strong>Conformité :</strong> Vérification de la Déclaration de
-              Conformité et des Procès Verbaux.
+              <strong>Appareil neuf :</strong> constitution des pièces
+              techniques et administratives pour les dossiers de remplacement
+              par appareil neuf.
             </span>
           </li>
           <li className="flex gap-3 items-start">
             <CheckBadgeIcon className="w-6 h-6 text-giget-red flex-shrink-0" />
             <span className="text-slate-700">
-              <strong>Levée des réserves :</strong> Émission du rapport de
-              réserves et suivi sans concession jusqu'à résolution totale.
+              <strong>Accompagnement global :</strong> appui à l'analyse des
+              offres, au choix des entreprises et au suivi du dossier jusqu'à sa
+              finalisation.
             </span>
           </li>
         </ul>
@@ -188,8 +192,8 @@ const ElevatorServices = () => {
       {/* Header Banner */}
       <PageBanner
         subtitle="Expertise Technique"
-        title="Pôle Ascenseurs"
-        description="Garantir la sécurité, la conformité et la disponibilité des installations pour le confort des locataires."
+        title="Pôle Ascenseurs & Automatismes de garage"
+        description="Garantir la sécurité, la conformité et la disponibilité des ascenseurs et automatismes de garage pour le confort des locataires."
         bgColor="bg-giget-blue"
         bgImage="https://images.unsplash.com/photo-1543593450-4faaab9a0f6e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         bgOpacity="opacity-20"
@@ -209,9 +213,10 @@ const ElevatorServices = () => {
             </h2>
             <p className="text-slate-600 leading-relaxed text-lg mb-6">
               Le GIGET agit comme le tiers de confiance technique des bailleurs.
-              Nos chargés d'affaires et consultants ascenseurs surveillent en
+              Nos chargés d'affaires et consultants expérimentés assurent le suivi des
+              ascenseurs et des automatismes de garage, en surveillant en
               permanence l'état du parc et la qualité des prestations des
-              ascensoristes.
+              entreprises intervenantes.
             </p>
             <ul className="space-y-3">
               <li className="flex items-center gap-3">
@@ -223,7 +228,7 @@ const ElevatorServices = () => {
               <li className="flex items-center gap-3">
                 <CheckBadgeIcon className="w-5 h-5 text-giget-red" />
                 <span className="font-bold text-giget-blue">
-                  Expertise réglementaire (Loi SAE)
+                  Expertise réglementaire sur les ascenseurs et les automatismes de garage
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -239,9 +244,9 @@ const ElevatorServices = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            src="/man-electrical-technician-working-switchboard-with-fuses-uses-tablet.jpg"
+            src="https://images.unsplash.com/photo-1609648220059-02d3edbcfa43?q=80&w=1169&auto=format&fit=crop"
             alt="Illustration Ascenseur"
-            className="w-full h-auto object-cover shadow-2xl"
+            className="w-full h-auto object-cover shadow-2xl border-[3px] border-gray-300"
           />
         </div>
 

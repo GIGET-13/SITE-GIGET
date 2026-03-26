@@ -33,7 +33,7 @@ const Header = () => {
   const navLinks = [
     { to: "/", label: "Accueil" },
     { to: "/organisation", label: "L'Association" },
-    { to: "/ascenseurs", label: "Pôle Ascenseurs" },
+    { to: "/ascenseurs", label: "Pôle Ascenseurs & Automatismes de garage" },
     { to: "/plomberie", label: "Pôle Plomberie (Viae Domo)" },
     { to: "/contact", label: "Contact" },
   ];

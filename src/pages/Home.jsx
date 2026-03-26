@@ -17,7 +17,13 @@ const RevealText = ({ children, delay = 0 }) => (
   </motion.div>
 );
 
-const ParallaxImage = ({ src, alt, className, reverse = false }) => {
+const ParallaxImage = ({
+  src,
+  alt,
+  className,
+  reverse = false,
+  overlayClassName = "",
+}) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -43,7 +49,7 @@ const ParallaxImage = ({ src, alt, className, reverse = false }) => {
     <motion.div
       ref={ref}
       style={{ filter }}
-      className={`relative overflow-hidden ${className}`}
+      className={`group relative overflow-hidden ${className}`}
     >
       <motion.div
         style={{ y, scale: 1.7 }}
@@ -51,6 +57,11 @@ const ParallaxImage = ({ src, alt, className, reverse = false }) => {
       >
         <img src={src} alt={alt} className="w-full h-full object-cover" />
       </motion.div>
+      {overlayClassName ? (
+        <div
+          className={`absolute inset-0 pointer-events-none transition-all duration-500 ${overlayClassName}`}
+        ></div>
+      ) : null}
     </motion.div>
   );
 };
@@ -63,9 +74,10 @@ const Home = () => {
         {/* Image Side */}
         <div className="w-full lg:w-1/2 relative h-[40vh] md:h-[50vh] lg:h-auto">
           <ParallaxImage
-            src="https://images.unsplash.com/photo-1541194577687-8c63bf9e7ee3?q=80&w=1935&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1543593450-4faaab9a0f6e?q=80&w=1170&auto=format&fit=crop"
             alt="Architecture Moderne Marseille"
             className="w-full h-full absolute inset-0"
+            overlayClassName="bg-[#7b5436]/45 mix-blend-multiply group-hover:bg-[#7b5436]/20"
           />
         </div>
 
@@ -163,6 +175,7 @@ const Home = () => {
             alt="Technicien GIGET"
             className="w-full h-full absolute inset-0"
             reverse={true}
+            overlayClassName="bg-[#7b5436]/45 mix-blend-multiply group-hover:bg-[#7b5436]/20"
           />
           <div className="absolute inset-0 bg-[#98b4c1]/15 mix-blend-multiply transition-opacity duration-500 z-20 pointer-events-none"></div>
         </div>

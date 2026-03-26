@@ -55,7 +55,7 @@ const Hero = () => {
         >
           <motion.div
             variants={itemVariants}
-            className="flex items-center gap-4 mb-8"
+            className="flex items-center gap-4 mb-6"
           >
             <span className="h-[2px] w-12 bg-giget-red"></span>
             <span className="text-giget-red uppercase tracking-[0.3em] text-xs font-bold">
@@ -77,9 +77,7 @@ const Hero = () => {
             variants={itemVariants}
             className="text-lg text-slate-600 max-w-lg font-light leading-relaxed mb-10"
           >
-            Le GIGET accompagne les bailleurs sociaux dans la gestion technique
-            de leur patrimoine : Ascenseurs, Diagnostics, AMO et Plomberie (Viae
-            Domo).
+            L’Association a pour but principal, pour le patrimoine immobilier locatif et social géré par les bailleurs sociaux adhérents, d’améliorer l’efficacité de l’action de ces derniers, le bien-vivre ensemble et le bien-être des locataires, en mettant à disposition de ses adhérents, une organisation technique spécialisée d’assistance à la maîtrise d’ouvrage.
           </motion.p>
 
           <motion.div
@@ -89,7 +87,11 @@ const Hero = () => {
             <Link to="/ascenseurs" className="hero-btn type--bordeaux">
               <div className="hero-btn__line"></div>
               <div className="hero-btn__line"></div>
-              <span className="hero-btn__text">Ascenseurs</span>
+              <span className="hero-btn__text">
+                Ascenseurs &
+                <br />
+                automatismes de garage
+              </span>
               <div className="hero-btn__drows">
                 <div className="hero-btn__drow1"></div>
                 <div className="hero-btn__drow2"></div>
@@ -108,7 +110,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] w-full will-change-transform mt-8 md:mt-0"
+          className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] w-full will-change-transform mt-8 md:mt-0 overflow-visible"
           style={{
             transform: isMobile ? "none" : `translateY(${scrollY * -0.05}px)`,
           }}
@@ -116,39 +118,21 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
-          <div className="absolute top-0 right-0 w-[90%] md:top-5 h-full overflow-hidden rounded-tl-[80px] md:rounded-tl-[120px] shadow-2xl border-r-4 md:border-r-8 border-b-4 md:border-b-8 border-white">
+          <div className="absolute top-0 right-0 md:-right-16 lg:-right-24 md:top-5 h-full w-full md:w-[108%] lg:w-[114%] overflow-hidden rounded-tl-[80px] md:rounded-tl-[120px] shadow-2xl border-r-4 md:border-r-8 border-b-4 md:border-b-8 border-white">
             <img
-              src="https://images.unsplash.com/photo-1650668015785-742c621331cd?q=80&w=1170&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1689864480104-35fbbd99c81c?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Intérieur Ascenseur Moderne"
               className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-giget-blue/5"></div>
           </div>
-
-          <motion.div
-            className="absolute bottom-4 md:bottom-24 left-0 bg-white p-4 md:p-8 shadow-xl border-l-4 border-giget-red max-w-[200px] sm:max-w-xs z-20"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
-          >
-            <p className="font-serif text-3xl text-giget-blue mb-2">
-              Transparence
-            </p>
-            <p className="text-xs uppercase tracking-widest text-slate-500 leading-relaxed">
-              Modèle associatif à but non lucratif.
-              <br />
-              Exclu des procédures de consultation en vertu des articles L2511-1
-              à L2511-5 de la commande publique relatifs à la quasi-régie
-              (in-house).
-            </p>
-          </motion.div>
         </motion.div>
       </div>
 
       <style>{`
         .type--bordeaux {
           --line_color: #800020;
-          --back_color: #c74056ff;
+          --back_color: #9e2438;
         }
         .type--blue {
           --line_color: #004e64;
@@ -157,8 +141,8 @@ const Hero = () => {
         .hero-btn {
           position: relative;
           z-index: 0;
-          width: 240px;
-          height: 56px;
+          width: min(100%, 430px);
+          height: 74px;
           text-decoration: none;
           font-size: 14px;
           font-weight: bold;
@@ -172,11 +156,14 @@ const Hero = () => {
         }
         .hero-btn__text {
           display: flex;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
           width: 100%;
           height: 100%;
           text-transform: uppercase;
+          text-align: center;
+          line-height: 1.25;
         }
         .hero-btn::before,
         .hero-btn::after,
@@ -235,11 +222,10 @@ const Hero = () => {
           right: 0;
         }
         .hero-btn:hover {
-          letter-spacing: 6px;
           color: #ffffff;
         }
         .hero-btn:hover .hero-btn__text {
-          color: #ffffff;
+          color: #211f1f;
         }
         .hero-btn:hover::before,
         .hero-btn:hover .hero-btn__text::before {
